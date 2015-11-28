@@ -82,3 +82,6 @@
  */
 + (void)hide;
 ```
+
+##  <a id="注意">注意</head>
+代码参考了SVProgressHUD的源码，感谢SVProgressHUD的作者，这个项目为学习时的项目，如果有bug请指正。
