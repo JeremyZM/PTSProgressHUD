@@ -105,6 +105,11 @@
 [PTSProgressHUD setTitleStr:@"加载中"];
 [PTSProgressHUD show];
 ```
+或者
+```objc
+// 一行代码设置自定义gif图片和文字
+[PTSProgressHUD showWithGifImagePath:@"xxx.gif" withTitle:@"正在加载"];
+```
 
 3.各种属性设置
 ```objc
