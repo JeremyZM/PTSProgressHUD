@@ -120,5 +120,8 @@
 [PTSProgressHUD hide];
 ```
 
+5.更改默认图片
+直接把PTSProgressHUD.bundle里面的gif图片改成自己的就可以了
+
 ##  <a id="注意">注意</head>
 代码参考了SVProgressHUD的源码，感谢SVProgressHUD的作者，这个项目为学习时的项目，如果有bug请指正。
