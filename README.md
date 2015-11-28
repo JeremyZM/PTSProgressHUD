@@ -88,7 +88,7 @@
 #import "PTSProgressHUD.h"
 ```
 
-2.直接使用
+2.展示蒙版
 ```objc
 // 加载蒙版，只有默认gif图片，没有文字
 [PTSProgressHUD show];
@@ -104,6 +104,20 @@
 [PTSProgressHUD setGifImage:[YYImage imageNamed:@"xxx.gif"]];
 [PTSProgressHUD setTitleStr:@"加载中"];
 [PTSProgressHUD show];
+```
+
+3.各种属性设置
+```objc
+// 文字颜色
+[PTSProgressHUD setTitleColor:[UIColor grayColor]];
+// 图片高度比例(默认为0.2，取值在-1到1之间, 值越大图片向上高度越大，反之越小越往下)
+[PTSProgressHUD setGifImgRatio:0.8];
+...
+```
+
+4.隐藏蒙版
+```objc
+[PTSProgressHUD hide];
 ```
 
 ##  <a id="注意">注意</head>
