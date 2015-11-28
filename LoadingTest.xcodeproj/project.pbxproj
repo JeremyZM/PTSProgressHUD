@@ -30,9 +30,6 @@
 		53B89F091C08A32600D9903A /* ZCSpinLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B89EFA1C08A32600D9903A /* ZCSpinLabel.m */; };
 		53B89F0A1C08A32600D9903A /* ZCThrownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B89EFC1C08A32600D9903A /* ZCThrownLabel.m */; };
 		53B89F0B1C08A32600D9903A /* ZCTransparencyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B89EFE1C08A32600D9903A /* ZCTransparencyLabel.m */; };
-		53B89F0D1C08A6DA00D9903A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B89F0C1C08A6DA00D9903A /* Accelerate.framework */; };
-		53B89F0F1C08A6E100D9903A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B89F0E1C08A6E100D9903A /* ImageIO.framework */; };
-		53B89F111C08A6F300D9903A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B89F101C08A6F300D9903A /* CoreText.framework */; };
 		53B89F131C09342700D9903A /* xxx.gif in Resources */ = {isa = PBXBuildFile; fileRef = 53B89F121C09342700D9903A /* xxx.gif */; };
 		53B89F171C093BC000D9903A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B89F161C093BC000D9903A /* TestViewController.m */; };
 		53B89F1C1C093CD300D9903A /* HttpManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B89F1B1C093CD300D9903A /* HttpManage.m */; };
@@ -97,9 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B89F111C08A6F300D9903A /* CoreText.framework in Frameworks */,
-				53B89F0F1C08A6E100D9903A /* ImageIO.framework in Frameworks */,
-				53B89F0D1C08A6DA00D9903A /* Accelerate.framework in Frameworks */,
 				020C45A9A306DA0897838F56 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.pts80.wf.WuFeng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -502,6 +497,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.pts80.wf.WuFeng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
