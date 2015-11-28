@@ -6,3 +6,5 @@
 
 使用效果:
 ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/pts.gif ) 
+
+<a id="如何使用PTSProgressHUD"></a>如何使用PTSProgressHUD
