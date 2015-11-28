@@ -7,6 +7,8 @@
 //
 
 #import "TestViewController.h"
+#import "PTSProgressHUD.h"
+#import "HttpManage.h"
 
 @interface TestViewController ()
 
@@ -16,22 +18,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor greenColor];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)dealloc
+{
+    NSLog(@"销毁了");
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [PTSProgressHUD setTitleColor:[UIColor grayColor]];
+    [PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setupData];
+    });
 }
-*/
+
+/**
+ *  请求网络数据
+ */
+- (void)setupData
+{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"pid"] = @"5";
+    
+    NSString *url = @"http://365ttq.com/api/?action=ad&control=list";
+    
+    [HttpManage PostWithURL:url parameters:param success:^(id json) {
+        
+        NSLog(@"%@", json);
+        [PTSProgressHUD hide];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 @end

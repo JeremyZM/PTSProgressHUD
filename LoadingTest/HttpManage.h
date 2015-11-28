@@ -14,32 +14,4 @@
  */
 + (void)PostWithURL:(NSString *)URL parameters:(NSDictionary *)parameters success:(void (^)(id json))success failure:(void (^)(NSError * error))failure;
 
-/**
- *  发送GET请求
- */
-+ (void)GetWithURL:(NSString *)URL parameters:(NSDictionary *)parameters success:(void (^)(id json))success failure:(void (^)(NSError * error))failure;
-
-/**
- *  上传图片
- */
-+ (void)PostWithURL:(NSString *)URL parameters:(NSDictionary *)parameters formDataArray:(NSArray *)formDataArray success:(void (^)(id json))success failure:(void (^)(NSError * error))failure;
-@end
-
-@interface MyFormData : NSObject
-/**
- *  图片数据
- */
-@property (nonatomic, strong) NSData *data;
-/**
- *  参数名称
- */
-@property (nonatomic, copy) NSString *name;
-/**
- *  文件名称
- */
-@property (nonatomic, copy) NSString *fileName;
-/**
- *  文件类型
- */
-@property (nonatomic, copy) NSString *mimeType;
 @end
