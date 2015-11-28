@@ -90,12 +90,20 @@
 
 2.直接使用
 ```objc
-// 使用默认图片，显示文字
+// 加载蒙版，只有默认gif图片，没有文字
+[PTSProgressHUD show];
+```
+
+```objc
+// 使用默认gif图片，显示文字
 [PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载"]; 
 ```
 或者
 ```objc
-[PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载"];
+// 设置自定义gif图片
+[PTSProgressHUD setGifImage:[YYImage imageNamed:@"xxx.gif"]];
+[PTSProgressHUD setTitleStr:@"加载中"];
+[PTSProgressHUD show];
 ```
 
 ##  <a id="注意">注意</head>
