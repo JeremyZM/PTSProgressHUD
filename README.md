@@ -4,3 +4,5 @@
 
 系统支持: iOS7+
 
+使用效果:
+![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/pts.gif ) 
