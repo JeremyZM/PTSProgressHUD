@@ -82,6 +82,21 @@
  */
 + (void)hide;
 ```
+##  <a id="项目中使用">项目中使用</head>
+1.导入PTSProgressHUD
+```objc
+#import "PTSProgressHUD.h"
+```
+
+2.直接使用
+```objc
+// 使用默认图片，显示文字
+[PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载"]; 
+```
+或者
+```objc
+[PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载"];
+```
 
 ##  <a id="注意">注意</head>
 代码参考了SVProgressHUD的源码，感谢SVProgressHUD的作者，这个项目为学习时的项目，如果有bug请指正。
