@@ -125,6 +125,19 @@
 
 @end
 ```
+
+##  <a id="状态枚举">状态枚举</head>
+```objc
+typedef NS_ENUM(NSInteger, PTSProgressStatus) {
+    PTSProgressStatusClickUIControl, // 点击了UIControll
+    PTSProgressStatusClickHudView, // 点击了HudView
+    PTSProgressStatusWillShowHudView, // HudView即将显示
+    PTSProgressStatusDidShowHudView, // HudView已经显示
+    PTSProgressStatusWillHideHudView, // HudView即将隐藏
+    PTSProgressStatusDidHideHudView, // HudView已经隐藏
+};
+```
+
 ##  <a id="项目中使用">项目中使用</head>
 1.导入PTSProgressHUD
 ```objc
