@@ -161,7 +161,7 @@
 [PTSProgressHUD hide];
 ```
 
-6.更改默认图片
+6.更改默认图片 \n
 直接把PTSProgressHUD.bundle里面的gif图片改成自己的就可以了
 
 ##  <head id="注意">注意</head>
