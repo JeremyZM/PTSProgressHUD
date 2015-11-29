@@ -136,6 +136,11 @@
 
 3.展示局部蒙版（指定一个UIView）
 ```objc
+// 一行代码设置局部蒙版
+[PTSProgressHUD showWithGifImagePath:nil withTitle:@"加载中" toView:self.view];
+```
+或者
+```objc
 // 设置指定的view
 [PTSProgressHUD setToView:self.view];
 // 添加加载指示器(全屏显示,默认gif图片，没有文字)
@@ -159,5 +164,5 @@
 6.更改默认图片
 直接把PTSProgressHUD.bundle里面的gif图片改成自己的就可以了
 
-##  <a id="注意">注意</head>
-代码参考了SVProgressHUD的源码，感谢SVProgressHUD的作者，这个项目为学习时的项目，如果有bug请指正。
+##  <head id="注意">注意</head>
+项目使用了YYImage，代码参考了SVProgressHUD的源码，感谢SVProgressHUD的作者，这个项目为学习SVProgressHUD时所写的项目，如果有bug请指正。
