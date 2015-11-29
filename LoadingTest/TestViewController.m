@@ -20,6 +20,9 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor greenColor];
+    
+    [PTSProgressHUD setTitleColor:[UIColor grayColor]];
+    [PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载" toView:self.view];
 }
 
 - (void)dealloc
@@ -27,12 +30,16 @@
     NSLog(@"销毁了");
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [PTSProgressHUD setTitleColor:[UIColor grayColor]];
-    [PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载"];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self setupData];

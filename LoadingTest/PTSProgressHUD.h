@@ -27,6 +27,8 @@
 @property (strong, nonatomic, readonly) UIColor *bgColor UI_APPEARANCE_SELECTOR;
 // extension的view
 @property (strong, nonatomic) UIView *viewForExtension UI_APPEARANCE_SELECTOR;
+// 指定的view
+@property (strong, nonatomic) UIView *toView UI_APPEARANCE_SELECTOR;
 
 /**
  *  设置gif图片
@@ -60,19 +62,38 @@
  *  设置extension的view
  */
 + (void)setviewForExtension:(UIView *)viewForExtension;
+/**
+ *  设置指定的view
+ */
++ (void)setToView:(UIView *)toView;
 
 /**
- *  开始加载(默认gif图片，没有文字)
+ *  添加加载指示器(全屏显示,默认gif图片，没有文字)
  */
 + (void)show;
 
 /**
- *  加载(带文字和图片)
+ *  添加加载指示器(全屏显示,带文字和图片)
  *
  *  @param imagePath gif图片路径
  *  @param title     文字
  */
 + (void)showWithGifImagePath:(NSString *)imagePath withTitle:(NSString *)title;
+
+/**
+ *  添加加载指示器(在指定的view上面,默认gif图片，没有文字)
+ *
+ *  @param toView 添加到哪一个view上
+ */
++ (void)showToView:(UIView *)toView;
+
+/**
+ *  添加加载指示器(在指定的view上面,带文字和图片)
+ *
+ *  @param imagePath gif图片路径
+ *  @param title     文字
+ */
++ (void)showWithGifImagePath:(NSString *)imagePath withTitle:(NSString *)title toView:(UIView *)toView;
 
 /**
  *  隐藏动画
