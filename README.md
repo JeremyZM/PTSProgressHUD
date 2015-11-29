@@ -174,10 +174,18 @@
 }
 ```
 
-7.更改默认图片
+7.代理监听
+```objc
+// block状态回调
+[PTSProgressHUD shareView].statusBlock = ^ (PTSProgressStatus status) {
+    NSLog(@"%zi", status);
+};
+```
+
+8.更改默认图片
 * 直接把PTSProgressHUD.bundle里面的gif图片改成自己的就可以了
 
-8.设置UIImage
+9.设置UIImage
 * 因为项目中使用了YYImage，所以使用"[PTSProgressHUD setGifImage:[YYImage imageNamed:@"xxx.gif"]]"时应该用YYImage而不是UIImage
 
 ##  <head id="注意">注意</head>
