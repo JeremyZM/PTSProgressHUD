@@ -111,9 +111,9 @@
 #import "PTSProgressHUD.h"
 ```
 
-2.展示蒙版
+2.展示全局蒙版（覆盖整个UIWindow）
 ```objc
-// 加载蒙版，只有默认gif图片，没有文字
+// 添加加载指示器(全屏显示,默认gif图片，没有文字)
 [PTSProgressHUD show];
 ```
 
@@ -134,7 +134,15 @@
 [PTSProgressHUD showWithGifImagePath:@"xxx.gif" withTitle:@"正在加载"];
 ```
 
-3.各种属性设置
+3.展示局部蒙版（指定一个UIView）
+```objc
+// 设置指定的view
+[PTSProgressHUD setToView:self.view];
+// 添加加载指示器(全屏显示,默认gif图片，没有文字)
+[PTSProgressHUD show];
+```
+
+4.各种属性设置
 ```objc
 // 文字颜色
 [PTSProgressHUD setTitleColor:[UIColor grayColor]];
@@ -143,12 +151,12 @@
 ...
 ```
 
-4.隐藏蒙版
+5.隐藏蒙版
 ```objc
 [PTSProgressHUD hide];
 ```
 
-5.更改默认图片
+6.更改默认图片
 直接把PTSProgressHUD.bundle里面的gif图片改成自己的就可以了
 
 ##  <a id="注意">注意</head>
