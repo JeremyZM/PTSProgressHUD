@@ -22,6 +22,9 @@
     self.view.backgroundColor = [UIColor greenColor];
     
     [PTSProgressHUD setTitleColor:[UIColor grayColor]];
+    [PTSProgressHUD shareView].statusBlock = ^ (PTSProgressStatus status) {
+        NSLog(@"%zi", status);
+    };
     [PTSProgressHUD showWithGifImagePath:nil withTitle:@"加载中"];
 }
 
@@ -51,7 +54,6 @@
  */
 - (void)setupData
 {
-    
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"pid"] = @"5";
     

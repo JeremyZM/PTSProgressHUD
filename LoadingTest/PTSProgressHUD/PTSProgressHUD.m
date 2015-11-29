@@ -39,6 +39,7 @@ NSString * const PTSProgressHUDStatusUserInfoKey = @"PTSProgressHUDStatusUserInf
         _isInitializing = YES;
         
         self.translatesAutoresizingMaskIntoConstraints = YES;
+        self.userInteractionEnabled = NO;
         _bgColor = [UIColor whiteColor];
         _titleColor = [UIColor blackColor];
         _titleSize = [UIFont systemFontOfSize:17];
@@ -268,6 +269,9 @@ NSString * const PTSProgressHUDStatusUserInfoKey = @"PTSProgressHUDStatusUserInf
 #pragma mark - Private Method
 - (void)showProgressWithImagePath:(NSString *)imagePath title:(NSString *)title
 {
+    // 监听通知
+    [self addNotification];
+    
     if (!self.overlayView.superview) { // 如果UIControl的父控件不存在
 #if !defined(SV_APP_EXTENSIONS)
         
@@ -352,6 +356,8 @@ NSString * const PTSProgressHUDStatusUserInfoKey = @"PTSProgressHUDStatusUserInf
         }];
     }
     
+    
+    
 }
 
 - (void)didReceiveTouchEvent:(id)sender forEvent:(UIEvent *)event
@@ -401,6 +407,57 @@ NSString * const PTSProgressHUDStatusUserInfoKey = @"PTSProgressHUDStatusUserInf
     } completion:^(BOOL finished) {
         [[NSNotificationCenter defaultCenter] postNotificationName:PTSProgressHUDDidDisappearNotificationn object:nil userInfo:userInfo];
     }];
+}
+
+- (void)addNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveTouchEvent) name:PTSProgressHUDDidReceiveTouchEventNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didHubViewEvent) name:PTSProgressHUDDidTouchDownInsideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hubViewWillShow) name:PTSProgressHUDWillShowAnimationNotificationn object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hubViewDidShow) name:PTSProgressHUDDidShowAnimationNotificationn object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hubViewWillHide) name:PTSProgressHUDWillDisappearNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hubViewDidHide) name:PTSProgressHUDDidDisappearNotificationn object:nil];
+}
+
+- (void)didReceiveTouchEvent
+{
+    [self willSendStatusToDelegate:PTSProgressStatusClickUIControl];
+}
+
+- (void)didHubViewEvent
+{
+    [self willSendStatusToDelegate:PTSProgressStatusClickHudView];
+}
+
+- (void)hubViewWillShow
+{
+    [self willSendStatusToDelegate:PTSProgressStatusWillShowHudView];
+}
+
+- (void)hubViewDidShow
+{
+    [self willSendStatusToDelegate:PTSProgressStatusDidShowHudView];
+}
+
+- (void)hubViewWillHide
+{
+    [self willSendStatusToDelegate:PTSProgressStatusWillHideHudView];
+}
+
+- (void)hubViewDidHide
+{
+    [self willSendStatusToDelegate:PTSProgressStatusDidHideHudView];
+}
+
+- (void)willSendStatusToDelegate:(PTSProgressStatus)status
+{
+    if ([self.delegate respondsToSelector:@selector(PTSProgressHUDGetHudViewStatus:)]) {
+        [self.delegate PTSProgressHUDGetHudViewStatus:status];
+    }
+    
+    if (self.statusBlock) {
+        self.statusBlock(status);
+    }
 }
 
 @end

@@ -9,6 +9,28 @@
 #import <UIKit/UIKit.h>
 #import "YYImage.h"
 
+typedef NS_ENUM(NSInteger, PTSProgressStatus) {
+    PTSProgressStatusClickUIControl, // 点击了UIControll
+    PTSProgressStatusClickHudView, // 点击了HudView
+    PTSProgressStatusWillShowHudView, // HudView即将显示
+    PTSProgressStatusDidShowHudView, // HudView已经显示
+    PTSProgressStatusWillHideHudView, // HudView即将隐藏
+    PTSProgressStatusDidHideHudView, // HudView已经隐藏
+};
+
+typedef void(^PTSProgressHUDStatusBlock)(PTSProgressStatus status);
+
+@protocol PTSProgressHUDDelegate <NSObject>
+@optional
+/**
+ *  监听Hud的状态变化
+ *
+ *  @param status 状态枚举
+ */
+- (void)PTSProgressHUDGetHudViewStatus:(PTSProgressStatus)status;
+
+@end
+
 @interface PTSProgressHUD : UIView
 
 // git图片
@@ -99,5 +121,25 @@
  *  隐藏动画
  */
 + (void)hide;
+
+/**
+ *  获取自己
+ */
++ (PTSProgressHUD *)shareView;
+
+/**
+ *  代理
+ */
+@property (nonatomic, weak) id<PTSProgressHUDDelegate> delegate;
+
+/**
+ *  block回调状态
+ */
+@property (nonatomic, copy) PTSProgressHUDStatusBlock statusBlock;
+
+/**
+ *  状态
+ */
+@property (nonatomic, assign) PTSProgressStatus status;
 
 @end
