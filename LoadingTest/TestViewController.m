@@ -22,7 +22,7 @@
     self.view.backgroundColor = [UIColor greenColor];
     
     [PTSProgressHUD setTitleColor:[UIColor grayColor]];
-    [PTSProgressHUD showWithGifImagePath:nil withTitle:@"正在加载" toView:self.view];
+    [PTSProgressHUD showWithGifImagePath:nil withTitle:@"加载中"];
 }
 
 - (void)dealloc
