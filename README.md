@@ -6,6 +6,7 @@
 
 使用效果:
 ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/fullScreen.gif ) 
+
 ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/partScreen.gif ) 
 
 ##  <a id="如何使用PTSProgressHUD">如何使用PTSProgressHUD</head>
