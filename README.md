@@ -8,7 +8,7 @@
 ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/fullScreen.gif ) (添加到UIWindow) ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/partScreen.gif ) (添加到指定的UIView)
 
 ##  <a id="如何使用PTSProgressHUD">如何使用PTSProgressHUD</head>
-直接把PTSProgressHUD文件夹导入到工程中，然后#import "PTSProgressHUD.h"
+直接把PTSProgressHUD文件夹导入到工程中，然后#import "PTSProgressHUD.h"，如果导入后提醒"_crc32", referenced from:错误，就在"Link Binary With Libraries"中添加libz.dylib
 
 ##  <a id="PTSProgressHUD.h">PTSProgressHUD.h</head>
 ```objc
