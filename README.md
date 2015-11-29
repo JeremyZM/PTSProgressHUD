@@ -5,7 +5,7 @@
 系统支持: iOS7+，iPhone/iPad
 
 使用效果:
-![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/fullScreen.gif )     ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/partScreen.gif ) 
+![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/fullScreen.gif ) (添加到UIWindow) ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/partScreen.gif ) (添加到指定的UIView)
 
 ##  <a id="如何使用PTSProgressHUD">如何使用PTSProgressHUD</head>
 直接把PTSProgressHUD文件夹导入到工程中，然后#import "PTSProgressHUD.h"
