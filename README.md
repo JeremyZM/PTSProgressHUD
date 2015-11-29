@@ -5,10 +5,11 @@
 系统支持: iOS7+，iPhone/iPad
 
 使用效果:
-![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/pts.gif ) 
+![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/fullScreen.gif ) 
+![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/partScreen.gif ) 
 
 ##  <a id="如何使用PTSProgressHUD">如何使用PTSProgressHUD</head>
-项目依赖pop、YYImage和ZCAnimatedLabel第三方库，如果你项目中使用cocoapods，应该把这些库导入,导入后然后在项目中import "PTSProgressHUD.h"。
+直接把PTSProgressHUD文件夹导入到工程中，然后#import "PTSProgressHUD.h"
 
 ##  <a id="PTSProgressHUD.h">PTSProgressHUD.h</head>
 ```objc
