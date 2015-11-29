@@ -168,4 +168,4 @@
 * 因为项目中使用了YYImage，所以使用"[PTSProgressHUD setGifImage:[YYImage imageNamed:@"xxx.gif"]]"时应该用YYImage而不是UIImage
 
 ##  <head id="注意">注意</head>
-项目使用了YYImage，代码参考了SVProgressHUD的源码，感谢SVProgressHUD的作者，这个项目为学习SVProgressHUD时所写的项目，如果有bug请指正。
+项目使用了YYImage，代码参考了SVProgressHUD的源码，感谢SVProgressHUD和YYImage的作者，这个项目为学习SVProgressHUD时所写的项目，如果有bug请指正。
