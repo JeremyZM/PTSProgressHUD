@@ -103,6 +103,26 @@
  */
 + (void)hide;
 
+/**
+ *  获取自己
+ */
++ (PTSProgressHUD *)shareView;
+
+/**
+ *  代理
+ */
+@property (nonatomic, weak) id<PTSProgressHUDDelegate> delegate;
+
+/**
+ *  block回调状态
+ */
+@property (nonatomic, copy) PTSProgressHUDStatusBlock statusBlock;
+
+/**
+ *  状态
+ */
+@property (nonatomic, assign) PTSProgressStatus status;
+
 @end
 ```
 ##  <a id="项目中使用">项目中使用</head>
@@ -174,7 +194,7 @@
 }
 ```
 
-7.代理监听
+7.block
 ```objc
 // block状态回调
 [PTSProgressHUD shareView].statusBlock = ^ (PTSProgressStatus status) {
