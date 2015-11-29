@@ -4,7 +4,7 @@
 
 系统支持: iOS7+，iPhone/iPad
 
-使用效果:
+##  <a id="使用效果">使用效果</head>
 ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/fullScreen.gif ) (添加到UIWindow) ![image](https://github.com/vjieshao/PTSProgressHUD/blob/master/partScreen.gif ) (添加到指定的UIView)
 
 ##  <a id="如何使用PTSProgressHUD">如何使用PTSProgressHUD</head>
