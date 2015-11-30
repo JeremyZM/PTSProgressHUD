@@ -347,7 +347,7 @@ NSString * const PTSProgressHUDStatusUserInfoKey = @"PTSProgressHUDStatusUserInf
         [[NSNotificationCenter defaultCenter] postNotificationName:PTSProgressHUDWillShowAnimationNotificationn object:nil userInfo:userInfo];
         
         // 增加动画
-        [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:100 initialSpringVelocity:100 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.4 initialSpringVelocity:0.3 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
             self.hudView.transform = CGAffineTransformMakeScale(1, 1);
             self.overlayView.alpha = 1.0;
             self.alpha = 1.0;
