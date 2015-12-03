@@ -405,7 +405,9 @@ NSString * const PTSProgressHUDStatusUserInfoKey = @"PTSProgressHUDStatusUserInf
         self.alpha = 0.0;
         self.overlayView.alpha = 0.0;
     } completion:^(BOOL finished) {
+        [self.overlayView removeFromSuperview];
         [[NSNotificationCenter defaultCenter] postNotificationName:PTSProgressHUDDidDisappearNotificationn object:nil userInfo:userInfo];
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
     }];
 }
 
