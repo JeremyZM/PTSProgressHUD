@@ -15,7 +15,7 @@
 @interface PTSProgressHUD : UIView
 
 // git图片
-@property (strong, nonatomic, readonly) UIImage *gifImage UI_APPEARANCE_SELECTOR;
+@property (strong, nonatomic, readonly) NSString *gifImageName UI_APPEARANCE_SELECTOR;
 // 文字
 @property (copy, nonatomic, readonly) NSString *titleStr UI_APPEARANCE_SELECTOR;
 // 文字颜色
@@ -32,6 +32,8 @@
 @property (strong, nonatomic) UIView *viewForExtension UI_APPEARANCE_SELECTOR;
 // 指定的view
 @property (strong, nonatomic) UIView *toView UI_APPEARANCE_SELECTOR;
+// gifImageView
+@property (nonatomic, strong) UIImageView *gifImageView;
 
 /**
  *  设置gif图片
