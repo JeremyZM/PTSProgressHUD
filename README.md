@@ -38,7 +38,7 @@
 /**
  *  设置gif图片
  */
-+ (void)setGifImage:(UIImage *)gifImage;
++ (void)setGifImageName:(NSString *)gifImageName;
 /**
  *  设置文字
  */
