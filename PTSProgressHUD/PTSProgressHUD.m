@@ -359,7 +359,7 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 }
 
 #pragma mark - Public Method
-+ (void)setGifImageName:(UIImage *)gifImageName
++ (void)setGifImageName:(NSString *)gifImageName
 {
     [self shareView].gifImageName = gifImageName;
 }

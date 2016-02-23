@@ -9,6 +9,7 @@
 #import "TestViewController.h"
 #import "PTSProgressHUD.h"
 #import "HttpManage.h"
+#import "Masonry.h"
 
 @interface TestViewController ()
 
@@ -21,6 +22,11 @@
     
     self.view.backgroundColor = [UIColor greenColor];
     
+    // 修改gif图片大小(建议在BaseViewController里面设置)
+    UIImageView *imageView = [PTSProgressHUD shareView].gifImageView;
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 133));
+    }];
     // 设置hud字体颜色
     [PTSProgressHUD setTitleColor:[UIColor grayColor]];
     // 完成后的状态回调
