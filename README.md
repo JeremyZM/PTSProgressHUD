@@ -217,11 +217,17 @@ typedef NS_ENUM(NSInteger, PTSProgressStatus) {
 };
 ```
 
-8.更改默认图片
+8.更改gif图片大小
+```objc
+// 修改gif图片大小(建议在BaseViewController里面设置)
+UIImageView *imageView = [PTSProgressHUD shareView].gifImageView;
+[imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.size.mas_equalTo(CGSizeMake(100, 133));
+}];
+```
+
+9.更改默认图片
 * 直接把PTSProgressHUD.bundle里面的gif图片改成自己的就可以了
 
-9.设置UIImage
-* 因为项目中使用了YYImage，所以使用"[PTSProgressHUD setGifImage:[YYImage imageNamed:@"xxx.gif"]]"时应该用YYImage而不是UIImage
-
 ##  <head id="注意">注意</head>
-项目使用了YYImage，代码参考了SVProgressHUD的源码，感谢SVProgressHUD和YYImage的作者，这个项目为学习SVProgressHUD时所写的项目，如果有bug请指正。
+代码参考了SVProgressHUD和GIFHUD的源码，感谢SVProgressHUD和GIFHUD的作者，这个项目为学习SVProgressHUD时所写的项目，如果有bug请指正。
